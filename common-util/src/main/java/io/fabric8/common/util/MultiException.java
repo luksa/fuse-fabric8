@@ -46,6 +46,8 @@ public class MultiException extends Exception {
 
     public void throwIfCauses() throws MultiException {
         if (!causes.isEmpty()) {
+            LOGGER.info("WOOHOO: " + causes.size());
+            causes.iterator().next().printStackTrace();
             throw this;
         }
     }
